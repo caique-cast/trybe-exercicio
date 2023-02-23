@@ -1,6 +1,4 @@
-
-h1,p{ text-align: center;}
-li:hover { background-color: burlywood;}
-li:active { font-family: Georgia, 'Times New Roman', Times, serif; transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);}
-ul,ol { list-style: none ;}
-h1{}
+div:hover{
+    border-style: solid;
+}
+h3 { }
