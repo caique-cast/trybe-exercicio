@@ -1,12 +1,14 @@
-div:hover { border-style: double;}
-.primaria {background-color: aqua;}
-.secundaria {background-color: rgb(89, 0, 255);}
-.complementar {background-color: rgb(255, 0, 191); height: 300px; }
-.escura {background-color: rgb(30, 255, 0);}
-.clara {background-color: rgb(229, 255, 0);}
-.e1 { color: brown; font-size: 150px; font-style: italic; font-family: 'Courier New', Courier, monospace;}
-.e2 { color: rgb(165, 136, 42); font-size: 125px; font-style: oblique; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-.e3 { color: rgb(81, 165, 42); font-size: 100px; font-style: inherit; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
-.e4 { color: rgb(42, 165, 144); font-size: 75px; font-style: initial; font-family: 'Times New Roman', Times, serif;}
-.e5 { color: rgb(165, 42, 138); font-size: 50px; font-style: unset; font-family: Verdana, Geneva, Tahoma, sans-serif;}
-.e1,.e3,.e5 { font-style: italic;}
+ol { background-color: yellow;}
+ol li:nth-child(even) { color: green; }
+ol li:nth-child(odd) {font-weight: bold;}
+h1,h2,h3 {color: red;}
+h1 em,h2 em,h3 em{font-size: 40px;border: 1px solid black; }
+li {font-size: 20px;}
+li em {font-weight: 900px;}
+.linguagens li:nth-child(-n+3){color: blue; }
+
+.linguagens li:nth-child (java)
+{background-color: pink;}
+
+.stack:hover {font-weight: bold;}
+.stack li a[href="https://pt.stackoverflow.com/" ]:hover {color: orangered;}
