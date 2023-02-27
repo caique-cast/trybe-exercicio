@@ -1,12 +1,14 @@
-let patientId = '50';
-let isEnrolled = true;
-let patientInfo = {
-  firstName: 'Ana',
-  lastName: 'Santos',
-};
-let patientEmail = 'ana@email.com';
-
-console.log(typeof patientId);
-console.log(typeof isEnrolled);
-console.log(typeof patientInfo);
-console.log(typeof patientEmail)
+let estatus = 'lista';
+switch (estatus) {
+case 'aprovado':
+    console.log('Parabéns, você está no grupo de pessoas aprovadas!');
+    break;
+case 'lista':
+    console.log('Você está na nossa lista de espera.');
+    break;
+case 'reprovado':
+    console.log('Infelizmente, você reprovou');
+    break;
+default:
+     console.log ('Informação incorreta.');
+}
