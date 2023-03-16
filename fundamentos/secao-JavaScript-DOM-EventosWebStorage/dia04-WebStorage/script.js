@@ -1,9 +1,35 @@
-console.log(localStorage.length); // não possui nada salvo, então o retorno é o valor: 0
-localStorage.setItem('firstname', 'Adam'); // salva uma entrada com a key = 'firstname' e value = 'Adam'
-localStorage.setItem('lastname', 'Smith'); // salva uma entrada com a key = 'lastname' e value = 'Smith'
-console.log(localStorage.getItem('lastname')); // retorna o valor 'Smith'
-console.log(localStorage.length); // possui duas entradas, então o retorno é o valor: 2
-localStorage.removeItem('lastname'); // remove a entrada referente a key = 'lastname'
-console.log(localStorage.length); // possui uma entrada, então o retorno é o valor: 1
-localStorage.clear(); // limpa todas as entradas salvas em localStorage
-console.log(localStorage.length); // não possui nada salvo, então o retorno é o valor: 0
+window.onload = () => {
+    const buttonBackGroudColor = document.querySelectorAll('#background-color button');
+    const main = document.querySelector('main');
+    console.log(main);
+    const buttonLineHeight = document.querySelectorAll('#line-height button');
+    console.log(buttonLineHeight);
+ 
+    const changeLineHeight = (event) => {
+        const lineHeight = event.target.innerText;
+        main.style.lineHeight = lineHeight;
+        localStorage.setItem('LineHeight', lineHeight);
+    };
+    const createLineHeight = () => {
+        for (let index = 0; index < buttonLineHeight.length; index += 1) {
+            let cutButton = buttonLineHeight[index]
+            cutButton.addEventListener('click', changeLineHeight)
+        }
+    };
+    createLineHeight();
+    const lineHeight = localStorage.getItem('LineHeight');
+    main.style.lineHeight = lineHeight;
+
+    const setBackGroundColor = (event) => {
+        const backgroundColor = event.target.innerText
+        main.style.backgroundColor = backgroundColor;
+        /* localStorage.setItem('backgroundColor', color) */
+    }
+    const createBackGroundColor = () => {
+
+        for (let index = 0; index < buttonBackGroudColor.length; index += 1) {
+            buttonBackGroudColor[index].addEventListener('click', setBackGroundColor)
+        }
+    }
+    /*   createBackGroundColor(); */
+}
