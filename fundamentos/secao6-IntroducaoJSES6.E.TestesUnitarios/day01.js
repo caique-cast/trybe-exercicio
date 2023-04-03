@@ -19,7 +19,37 @@ button.addEventListener('click', () => {
 
   showPromo(name, number);
 });
+const showPromo = (name, number) => {
+  const firstText = document.querySelector('#text-initial');
+  const secondText = document.querySelector('#text-final');
+  
+  try {
+    checkName(name);
+    checkNumber(parseInt(number));
+    checkValidRange(number);
+    const productObject = checkPromo(number);
 
+    firstText.innerHTML = `Boas-vindas, ${name}!`;
+    secondText.innerHTML = `A promoção do dia é: 
+      ${productObject.product} no valor de R$ ${productObject.price}`;
+  } catch(err) {
+    secondText.innerHTML = err.message;
+  }finally {
+
+    document.querySelector('#name-id').value = "";
+  
+    document.querySelector('#number-id').value = "";
+  
+    }
+}
+const checkName = (name) => {
+  let letters = /[aA-zZ]+/;
+  
+  if (!name.match(letters)) {
+    throw new Error('É necessário digitar um nome válido');
+  }
+}
+/* 
 const showPromo = (name, number) => {
   const firstText = document.querySelector('#text-initial');
   const secondText = document.querySelector('#text-final');
@@ -28,9 +58,28 @@ const showPromo = (name, number) => {
   firstText.innerHTML = `Boas-vindas, ${name}!`;
   secondText.innerHTML = `A promoção do dia é: 
     ${productObject.product} no valor de R$ ${productObject.price}`;
-}
+} */
 
-// Segunda parte
+/* // Segunda parte
 const checkNumber = (number) => {
   return promo[number - 1];
+} */
+// Segunda parte
+const checkNumber = (number) => {
+  if (isNaN(number)) {
+    throw new Error('É necessário digitar um número');
+  }
+}
+// Terceira parte
+const checkPromo = (number) => {
+  for (let index = 0; index < promo.length; index += 1) {
+    if (number - 1 === index) {
+      return promo[index];
+    }
+  }
+}
+const checkValidRange = (number) => {
+  if ( number <= 0 || number > 10){
+    throw new Error('É necessário inserir um número entre 0 e 11')
+  }
 }
