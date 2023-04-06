@@ -42,7 +42,7 @@ const character = {
   };
   
   // desestruturando o objeto:
-  const { name, age, homeWorld: { name: planetName }, description: { jedi, specieName } } = character;
+  const { name2, age, homeWorld: { name: planetName }, description: { jedi, specieName } } = character;
   
   // imprimindo os valores:
   console.log(`Esse é o ${name}, ele tem ${age} anos, mora no planeta ${planetName} e, por incrível que possa parecer, ele ${jedi ? 'é um Jedi' : 'não é um Jedi'}. Da especie ${specieName}.`);
@@ -65,6 +65,6 @@ const daysOfWeek = {
     b: 'Turma B',
     c: 'Matematica',
   };
-  const name = student.a;
+  const name1 = student.a;
   console.log(name); // Maria
 console.log(student);  
